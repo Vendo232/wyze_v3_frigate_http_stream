@@ -1,4 +1,4 @@
-# wyze_v3_frigate_http_stream
+# WYZE CAM V3 SETUP FOR FRIGATE PERSON DETECTION NVR
 How to setup Wyze V3 camera to work better with Frigate
 How to use and setup Wyze V3 for Frigate Person Detection NVR
   
