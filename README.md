@@ -28,14 +28,16 @@ Installing DNSMASQ to spoof Wyze server
 10.	server=8.8.8.8
 11.	no-hosts
 12.	addn-hosts=/etc/dnsmasq.hosts
-13.	Sudo nano /etc/dnsmasq.hosts
-14.	This should be blank file, add one line
-15.	192.168.1.200 s3-us-west-2.amazonaws.com
-16.	192.168.1.200 is IP  of the Machine 2 where you will run installation script from.
-17.	Go to your Wifi router and under DNS add 192.168.1.100 as your DNS server. 
-18.	Start DNSMASQ
-19.	killall -9 dnsmasq
-20.	dnsmasq --no-daemon --log-queries
+13.	save and close the nano editor
+14.	Sudo nano /etc/dnsmasq.hosts
+15.	This should be blank file, add one line
+16.	192.168.1.200 s3-us-west-2.amazonaws.com
+17.	192.168.1.200 is IP  of the Machine 2 where you will run installation script from.
+18.	save and close the nano editor
+19.	Go to your Wifi router and under DNS add 192.168.1.100 as your DNS server. 
+20.	Start DNSMASQ by typins
+21.	"killall -9 dnsmasq"
+22.	dnsmasq --no-daemon --log-queries
 
 Install Telnet
 1.	This is installing modified WyzeHack which will enable you to Telnet to the cam.
