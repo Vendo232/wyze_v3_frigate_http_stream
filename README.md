@@ -20,24 +20,22 @@ Installing DNSMASQ to spoof Wyze server
 2.	On Machine 1 ( will call it DNS server ) run following commands ( assuming it is Ubuntu type OS )
 3..	Find IP of this PC by typing ifconfig -a ( e.g. 192.168.1.100 )
 4.	Your Machine DNS server for spoofing is 192.168.1.100 ( example )
-c.	sudo apt update
-d.	sudo apt install dnsmasq
-e.	sudo nano /etc/dnsmasq.conf
-i.	to the bottom of the file add following lines. Make sure all other lines are deactivated using # in the begging of the line 
-ii.	no-dhcp-interface=
-iii.	server=8.8.8.8
-iv.	no-hosts
-v.	addn-hosts=/etc/dnsmasq.hosts
-f.	Sudo nano /etc/dnsmasq.hosts
-i.	This should be blank file, add one line
-ii.	192.168.1.200 s3-us-west-2.amazonaws.com
-iii.	192.168.1.200 is IP  of the Machine 2 where you will run installation script from.
-iv.	 
-g.	Go to your Wifi router and under DNS add 192.168.1.100 as your DNS server. 
-h.	 
-i.	Start DNSMASQ
-j.	killall -9 dnsmasq
-k.	dnsmasq --no-daemon --log-queries
+5.	sudo apt update
+6.	sudo apt install dnsmasq
+7.	sudo nano /etc/dnsmasq.conf
+8.	to the bottom of the file add following lines. Make sure all other lines are deactivated using # in the begging of the line 
+9.	no-dhcp-interface=
+10.	server=8.8.8.8
+11.	no-hosts
+12.	addn-hosts=/etc/dnsmasq.hosts
+13.	Sudo nano /etc/dnsmasq.hosts
+14.	This should be blank file, add one line
+15.	192.168.1.200 s3-us-west-2.amazonaws.com
+16.	192.168.1.200 is IP  of the Machine 2 where you will run installation script from.
+17.	Go to your Wifi router and under DNS add 192.168.1.100 as your DNS server. 
+18.	Start DNSMASQ
+19.	killall -9 dnsmasq
+20.	dnsmasq --no-daemon --log-queries
 
 Install Telnet
 1.	This is installing modified WyzeHack which will enable you to Telnet to the cam.
@@ -46,10 +44,8 @@ Install Telnet
 4.	Unzip your release archive a directory, and change your current working directory to there.
 5.	Rename "config.inc.TEMPLATE" to "config.inc", and then update the content properly.
 6.	Make sure your wyze_updater.py file contains this URL part. 
-7.	 
 8.	Run "./remote_install.sh"
 9.	Run “sudo python3 ./wyze_updater.py --token ~/.wyze_token --debug update -m WYZEC1-JZ -m WYZECP1_JEF -m WYZE_CAKP2JFUS -m WYZEDB3 -f ./firmware.bin -p 80” 
-10.	 
 11.	First time, it will ask your Wyze account and password, and it may also ask for 2FA authentication.
 12.	The login credentials will be stored in a local file named ".tokens" for future use so you don't need to enter username and password and 2FA everytime. Make sure you don't share this file with anyone you don't trust.
 13.	The token seems to have an expiration period. So next time if you run into error with something like "Access token error" please delete ".tokens" file and restart.
