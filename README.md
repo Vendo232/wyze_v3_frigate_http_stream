@@ -20,7 +20,7 @@ Installing DNSMASQ to spoof Wyze server
 2.	On Machine 1 ( will call it DNS server ) run following commands ( assuming it is Ubuntu type OS )
 3..	Find IP of this PC by typing ifconfig -a ( e.g. 192.168.1.100 )
 4.	Your Machine DNS server for spoofing is 192.168.1.100 ( example )
-5.	- sudo apt update
+5.	sudo apt update
 6.	sudo apt install dnsmasq
 7.	sudo nano /etc/dnsmasq.conf
 8.	to the bottom of the file add following lines. Make sure all other lines are deactivated using # in the begging of the line 
